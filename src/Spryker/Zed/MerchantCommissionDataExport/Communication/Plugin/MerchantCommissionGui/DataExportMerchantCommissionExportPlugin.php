@@ -5,15 +5,21 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\MerchantCommissionDataExport\Business;
+namespace Spryker\Zed\MerchantCommissionDataExport\Communication\Plugin\MerchantCommissionGui;
 
 use Generated\Shared\Transfer\MerchantCommissionExportRequestTransfer;
 use Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer;
+use Spryker\Zed\Kernel\Communication\AbstractPlugin;
+use Spryker\Zed\MerchantCommissionGuiExtension\Communication\Dependency\Plugin\MerchantCommissionExportPluginInterface;
 
-interface MerchantCommissionDataExportFacadeInterface
+/**
+ * @method \Spryker\Zed\MerchantCommissionDataExport\MerchantCommissionDataExportConfig getConfig()
+ * @method \Spryker\Zed\MerchantCommissionDataExport\Business\MerchantCommissionDataExportFacadeInterface getFacade()
+ */
+class DataExportMerchantCommissionExportPlugin extends AbstractPlugin implements MerchantCommissionExportPluginInterface
 {
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Requires `MerchantCommissionExportRequestTransfer.format` to be set.
      * - Requires `MerchantCommissionExportRequestTransfer.connection` to be set.
      * - Requires `MerchantCommissionExportRequestTransfer.destination` to be set.
@@ -27,7 +33,10 @@ interface MerchantCommissionDataExportFacadeInterface
      *
      * @return \Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer
      */
-    public function exportMerchantCommissionsByMerchantCommissionExportRequest(
+    public function exportMerchantCommissions(
         MerchantCommissionExportRequestTransfer $merchantCommissionExportRequestTransfer
-    ): MerchantCommissionExportResponseTransfer;
+    ): MerchantCommissionExportResponseTransfer {
+        return $this->getFacade()
+            ->exportMerchantCommissionsByMerchantCommissionExportRequest($merchantCommissionExportRequestTransfer);
+    }
 }
