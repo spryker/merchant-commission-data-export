@@ -163,9 +163,9 @@ class MerchantCommissionDataExportRepository extends AbstractRepository implemen
     /**
      * @module Currency
      *
-     * @param list<array<string, mixed>> $merchantCommissionData
+     * @param array<array<string, mixed>> $merchantCommissionData
      *
-     * @return list<array<string, mixed>>
+     * @return array<array<string, mixed>>
      */
     protected function expandMerchantCommissionDataWithMerchantCommissionAmount(array $merchantCommissionData): array
     {
@@ -204,7 +204,7 @@ class MerchantCommissionDataExportRepository extends AbstractRepository implemen
     }
 
     /**
-     * @param list<array<string, mixed>> $merchantCommissionData
+     * @param array<array<string, mixed>> $merchantCommissionData
      *
      * @return list<int>
      */
@@ -214,7 +214,7 @@ class MerchantCommissionDataExportRepository extends AbstractRepository implemen
     }
 
     /**
-     * @param list<array<string, mixed>> $merchantCommissionAmountData
+     * @param array<array<string, mixed>> $merchantCommissionAmountData
      *
      * @return array<int, list<array<string, mixed>>>
      */
@@ -230,9 +230,9 @@ class MerchantCommissionDataExportRepository extends AbstractRepository implemen
     }
 
     /**
-     * @param list<array<string, mixed>> $merchantCommissionData
+     * @param array<array<string, mixed>> $merchantCommissionData
      *
-     * @return list<array<string, mixed>>
+     * @return array<array<string, mixed>>
      */
     protected function formatMerchantCommissionDataKeys(array $merchantCommissionData): array
     {

@@ -42,10 +42,10 @@ class MerchantCommissionMapper
     }
 
     /**
-     * @param list<array<string, mixed>> $merchantCommissionData
+     * @param array<array<string, mixed>> $merchantCommissionData
      * @param list<string> $selectedFields
      *
-     * @return list<array<string, mixed>>
+     * @return array<array<string, mixed>>
      */
     public function mapMerchantCommissionDataBySelectedFields(array $merchantCommissionData, array $selectedFields): array
     {
