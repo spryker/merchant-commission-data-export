@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer;
 
 interface MerchantCommissionDataExporterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionExportRequestTransfer $merchantCommissionExportRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer
-     */
     public function exportByMerchantCommissionExportRequest(
         MerchantCommissionExportRequestTransfer $merchantCommissionExportRequestTransfer
     ): MerchantCommissionExportResponseTransfer;

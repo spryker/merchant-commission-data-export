@@ -24,9 +24,6 @@ use Spryker\Zed\MerchantCommissionDataExport\MerchantCommissionDataExportDepende
  */
 class MerchantCommissionDataExportBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantCommissionDataExport\Business\Exporter\MerchantCommissionDataExporterInterface
-     */
     public function createMerchantCommissionDataExporter(): MerchantCommissionDataExporterInterface
     {
         return new MerchantCommissionDataExporter(
@@ -38,33 +35,21 @@ class MerchantCommissionDataExportBusinessFactory extends AbstractBusinessFactor
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionDataExport\Business\Mapper\MerchantCommissionDataExportMapperInterface
-     */
     public function createMerchantCommissionDataExportMapper(): MerchantCommissionDataExportMapperInterface
     {
         return new MerchantCommissionDataExportMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionDataExport\Business\Formatter\MerchantCommissionAmountFormatterInterface
-     */
     public function createMerchantCommissionAmountFormatter(): MerchantCommissionAmountFormatterInterface
     {
         return new MerchantCommissionAmountFormatter($this->getMerchantCommissionFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionDataExport\Dependency\Service\MerchantCommissionDataExportToDataExportServiceInterface
-     */
     public function getDataExportService(): MerchantCommissionDataExportToDataExportServiceInterface
     {
         return $this->getProvidedDependency(MerchantCommissionDataExportDependencyProvider::SERVICE_DATA_EXPORT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantCommissionDataExport\Dependency\Facade\MerchantCommissionDataExportToMerchantCommissionFacadeInterface
-     */
     public function getMerchantCommissionFacade(): MerchantCommissionDataExportToMerchantCommissionFacadeInterface
     {
         return $this->getProvidedDependency(MerchantCommissionDataExportDependencyProvider::FACADE_MERCHANT_COMMISSION);

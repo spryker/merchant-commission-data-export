@@ -18,12 +18,6 @@ use Generated\Shared\Transfer\MessageTransfer;
 
 class MerchantCommissionDataExportMapper implements MerchantCommissionDataExportMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionExportRequestTransfer $merchantCommissionExportRequestTransfer
-     * @param \Generated\Shared\Transfer\DataExportConfigurationTransfer $dataExportConfigurationTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataExportConfigurationTransfer
-     */
     public function mapMerchantCommissionExportRequestTransferToDataExportConfigurationTransfer(
         MerchantCommissionExportRequestTransfer $merchantCommissionExportRequestTransfer,
         DataExportConfigurationTransfer $dataExportConfigurationTransfer
@@ -41,12 +35,6 @@ class MerchantCommissionDataExportMapper implements MerchantCommissionDataExport
             ->setFields($merchantCommissionExportRequestTransfer->getFields());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataExportWriteResponseTransfer $dataExportWriteResponseTransfer
-     * @param \Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer $merchantCommissionExportResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer
-     */
     public function mapDataExportWriteResponseTransferToMerchantCommissionExportResponseTransfer(
         DataExportWriteResponseTransfer $dataExportWriteResponseTransfer,
         MerchantCommissionExportResponseTransfer $merchantCommissionExportResponseTransfer
@@ -59,12 +47,6 @@ class MerchantCommissionDataExportMapper implements MerchantCommissionDataExport
         return $merchantCommissionExportResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MessageTransfer $messageTransfer
-     * @param \Generated\Shared\Transfer\ErrorTransfer $errorTransfer
-     *
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     protected function mapMessageTransferToErrorTransfer(MessageTransfer $messageTransfer, ErrorTransfer $errorTransfer): ErrorTransfer
     {
         return $errorTransfer

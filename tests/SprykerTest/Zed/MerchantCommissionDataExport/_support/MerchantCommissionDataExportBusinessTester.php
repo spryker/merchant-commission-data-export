@@ -36,9 +36,6 @@ class MerchantCommissionDataExportBusinessTester extends Actor
 {
     use _generated\MerchantCommissionDataExportBusinessTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureMerchantCommissionTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getMerchantCommissionQuery());
@@ -61,12 +58,6 @@ class MerchantCommissionDataExportBusinessTester extends Actor
         return $parsedExportedData;
     }
 
-    /**
-     * @param int $calculatedAmount
-     * @param string $calculatorPluginType
-     *
-     * @return \Spryker\Zed\MerchantCommissionExtension\Communication\Dependency\Plugin\MerchantCommissionCalculatorPluginInterface
-     */
     public function getMerchantCommissionCalculatorPlugin(int $calculatedAmount, string $calculatorPluginType): MerchantCommissionCalculatorPluginInterface
     {
         return new class ($calculatedAmount, $calculatorPluginType) extends AbstractPlugin implements MerchantCommissionCalculatorPluginInterface
@@ -81,31 +72,17 @@ class MerchantCommissionDataExportBusinessTester extends Actor
              */
             protected string $calculatorPluginType;
 
-            /**
-             * @param int $calculatedAmount
-             * @param string $calculatorPluginType
-             */
             public function __construct(int $calculatedAmount, string $calculatorPluginType)
             {
                 $this->calculatedAmount = $calculatedAmount;
                 $this->calculatorPluginType = $calculatorPluginType;
             }
 
-            /**
-             * @return string
-             */
             public function getCalculatorType(): string
             {
                 return $this->calculatorPluginType;
             }
 
-            /**
-             * @param \Generated\Shared\Transfer\MerchantCommissionTransfer $merchantCommissionTransfer
-             * @param \Generated\Shared\Transfer\MerchantCommissionCalculationRequestItemTransfer $merchantCommissionCalculationRequestItemTransfer
-             * @param \Generated\Shared\Transfer\MerchantCommissionCalculationRequestTransfer $merchantCommissionCalculationRequestTransfer
-             *
-             * @return int
-             */
             public function calculateMerchantCommission(
                 MerchantCommissionTransfer $merchantCommissionTransfer,
                 MerchantCommissionCalculationRequestItemTransfer $merchantCommissionCalculationRequestItemTransfer,
@@ -114,32 +91,16 @@ class MerchantCommissionDataExportBusinessTester extends Actor
                 return $this->calculatedAmount;
             }
 
-            /**
-             * @param float $merchantCommissionAmount
-             *
-             * @return int
-             */
             public function transformAmountForPersistence(float $merchantCommissionAmount): int
             {
                 return (int)$merchantCommissionAmount;
             }
 
-            /**
-             * @param int $merchantCommissionAmount
-             *
-             * @return float
-             */
             public function transformAmountFromPersistence(int $merchantCommissionAmount): float
             {
                 return (float)$merchantCommissionAmount;
             }
 
-            /**
-             * @param int $merchantCommissionAmount
-             * @param string|null $currencyIsoCode
-             *
-             * @return string
-             */
             public function formatMerchantCommissionAmount(int $merchantCommissionAmount, ?string $currencyIsoCode = null): string
             {
                 return (string)$merchantCommissionAmount;
@@ -147,9 +108,6 @@ class MerchantCommissionDataExportBusinessTester extends Actor
         };
     }
 
-    /**
-     * @return \Orm\Zed\MerchantCommission\Persistence\SpyMerchantCommissionQuery
-     */
     protected function getMerchantCommissionQuery(): SpyMerchantCommissionQuery
     {
         return SpyMerchantCommissionQuery::create();

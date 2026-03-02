@@ -55,9 +55,6 @@ class MerchantCommissionAmountFormatter implements MerchantCommissionAmountForma
      */
     protected MerchantCommissionDataExportToMerchantCommissionFacadeInterface $merchantCommissionFacade;
 
-    /**
-     * @param \Spryker\Zed\MerchantCommissionDataExport\Dependency\Facade\MerchantCommissionDataExportToMerchantCommissionFacadeInterface $merchantCommissionFacade
-     */
     public function __construct(MerchantCommissionDataExportToMerchantCommissionFacadeInterface $merchantCommissionFacade)
     {
         $this->merchantCommissionFacade = $merchantCommissionFacade;
@@ -123,12 +120,6 @@ class MerchantCommissionAmountFormatter implements MerchantCommissionAmountForma
         return implode(',', $fixedAmountConfiguration);
     }
 
-    /**
-     * @param string $merchantCommissionCalculatorPluginType
-     * @param int $amount
-     *
-     * @return float
-     */
     protected function transformMerchantCommissionAmount(string $merchantCommissionCalculatorPluginType, int $amount): float
     {
         $merchantCommissionAmountTransformerRequestTransfer = (new MerchantCommissionAmountTransformerRequestTransfer())

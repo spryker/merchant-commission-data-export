@@ -39,11 +39,6 @@ class MerchantCommissionDataExportDependencyProvider extends AbstractBundleDepen
      */
     public const PROPEL_QUERY_MERCHANT_COMMISSION_AMOUNT = 'PROPEL_QUERY_MERCHANT_COMMISSION_AMOUNT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -53,11 +48,6 @@ class MerchantCommissionDataExportDependencyProvider extends AbstractBundleDepen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMerchantCommissionFacade(Container $container): Container
     {
         $container->set(static::FACADE_MERCHANT_COMMISSION, function (Container $container) {
@@ -69,11 +59,6 @@ class MerchantCommissionDataExportDependencyProvider extends AbstractBundleDepen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -83,11 +68,6 @@ class MerchantCommissionDataExportDependencyProvider extends AbstractBundleDepen
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addDataExportService(Container $container): Container
     {
         $container->set(static::SERVICE_DATA_EXPORT, function (Container $container) {

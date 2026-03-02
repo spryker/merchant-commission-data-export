@@ -19,25 +19,16 @@ use Spryker\Zed\MerchantCommissionDataExport\Persistence\Propel\Mapper\MerchantC
  */
 class MerchantCommissionDataExportPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantCommissionDataExport\Persistence\Propel\Mapper\MerchantCommissionMapper
-     */
     public function createMerchantCommissionMapper(): MerchantCommissionMapper
     {
         return new MerchantCommissionMapper();
     }
 
-    /**
-     * @return \Orm\Zed\MerchantCommission\Persistence\SpyMerchantCommissionQuery
-     */
     public function getMerchantCommissionPropelQuery(): SpyMerchantCommissionQuery
     {
         return $this->getProvidedDependency(MerchantCommissionDataExportDependencyProvider::PROPEL_QUERY_MERCHANT_COMMISSION);
     }
 
-    /**
-     * @return \Orm\Zed\MerchantCommission\Persistence\SpyMerchantCommissionAmountQuery
-     */
     public function getMerchantCommissionAmountPropelQuery(): SpyMerchantCommissionAmountQuery
     {
         return $this->getProvidedDependency(MerchantCommissionDataExportDependencyProvider::PROPEL_QUERY_MERCHANT_COMMISSION_AMOUNT);

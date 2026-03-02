@@ -26,12 +26,6 @@ class MerchantCommissionDataExportToDataExportServiceBridge implements MerchantC
         $this->dataExportService = $dataExportService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\DataExportBatchTransfer $dataExportBatchTransfer
-     * @param \Generated\Shared\Transfer\DataExportConfigurationTransfer $dataExportConfigurationTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataExportWriteResponseTransfer
-     */
     public function write(
         DataExportBatchTransfer $dataExportBatchTransfer,
         DataExportConfigurationTransfer $dataExportConfigurationTransfer

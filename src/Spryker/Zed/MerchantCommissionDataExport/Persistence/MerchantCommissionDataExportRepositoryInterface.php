@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\DataExportConfigurationTransfer;
 
 interface MerchantCommissionDataExportRepositoryInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataExportConfigurationTransfer $dataExportConfigurationTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataExportBatchTransfer
-     */
     public function getMerchantCommissionData(
         DataExportConfigurationTransfer $dataExportConfigurationTransfer
     ): DataExportBatchTransfer;

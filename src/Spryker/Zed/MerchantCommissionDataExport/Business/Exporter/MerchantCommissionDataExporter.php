@@ -53,13 +53,6 @@ class MerchantCommissionDataExporter implements MerchantCommissionDataExporterIn
      */
     protected MerchantCommissionDataExportToDataExportServiceInterface $dataExportService;
 
-    /**
-     * @param \Spryker\Zed\MerchantCommissionDataExport\Business\Mapper\MerchantCommissionDataExportMapperInterface $merchantCommissionDataExportMapper
-     * @param \Spryker\Zed\MerchantCommissionDataExport\Persistence\MerchantCommissionDataExportRepositoryInterface $merchantCommissionDataExportRepository
-     * @param \Spryker\Zed\MerchantCommissionDataExport\Business\Formatter\MerchantCommissionAmountFormatterInterface $merchantCommissionAmountFormatter
-     * @param \Spryker\Zed\MerchantCommissionDataExport\MerchantCommissionDataExportConfig $merchantCommissionDataExportConfig
-     * @param \Spryker\Zed\MerchantCommissionDataExport\Dependency\Service\MerchantCommissionDataExportToDataExportServiceInterface $dataExportService
-     */
     public function __construct(
         MerchantCommissionDataExportMapperInterface $merchantCommissionDataExportMapper,
         MerchantCommissionDataExportRepositoryInterface $merchantCommissionDataExportRepository,
@@ -74,11 +67,6 @@ class MerchantCommissionDataExporter implements MerchantCommissionDataExporterIn
         $this->dataExportService = $dataExportService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionExportRequestTransfer $merchantCommissionExportRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\MerchantCommissionExportResponseTransfer
-     */
     public function exportByMerchantCommissionExportRequest(
         MerchantCommissionExportRequestTransfer $merchantCommissionExportRequestTransfer
     ): MerchantCommissionExportResponseTransfer {

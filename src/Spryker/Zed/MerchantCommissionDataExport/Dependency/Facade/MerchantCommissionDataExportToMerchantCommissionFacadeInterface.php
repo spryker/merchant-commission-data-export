@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\MerchantCommissionAmountTransformerRequestTransfer
 
 interface MerchantCommissionDataExportToMerchantCommissionFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
-     *
-     * @return float
-     */
     public function transformMerchantCommissionAmountFromPersistence(
         MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
     ): float;

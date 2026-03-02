@@ -53,11 +53,6 @@ class MerchantCommissionDataExportRepository extends AbstractRepository implemen
      */
     protected const FILTER_CRITERIA_PARAM_LIMIT = 'limit';
 
-    /**
-     * @param \Generated\Shared\Transfer\DataExportConfigurationTransfer $dataExportConfigurationTransfer
-     *
-     * @return \Generated\Shared\Transfer\DataExportBatchTransfer
-     */
     public function getMerchantCommissionData(
         DataExportConfigurationTransfer $dataExportConfigurationTransfer
     ): DataExportBatchTransfer {

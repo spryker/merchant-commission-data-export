@@ -80,9 +80,6 @@ class ExportMerchantCommissionsByMerchantCommissionExportRequestTest extends Uni
      */
     protected MerchantCommissionDataExportBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -93,9 +90,6 @@ class ExportMerchantCommissionsByMerchantCommissionExportRequestTest extends Uni
         ]);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsResponseTransferWithCorrectData(): void
     {
         // Arrange
@@ -134,9 +128,6 @@ class ExportMerchantCommissionsByMerchantCommissionExportRequestTest extends Uni
         $this->assertSame($merchantCommissionTransfer->getKeyOrFail(), $parsedExportedData[0]['key']);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsResponseTransferWithNotEmptyErrorMessage(): void
     {
         // Arrange
@@ -190,9 +181,6 @@ class ExportMerchantCommissionsByMerchantCommissionExportRequestTest extends Uni
         ];
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\MerchantCommissionExportRequestTransfer
-     */
     public function createMerchantCommissionExportRequestTransfer(): MerchantCommissionExportRequestTransfer
     {
         return (new MerchantCommissionExportRequestTransfer())

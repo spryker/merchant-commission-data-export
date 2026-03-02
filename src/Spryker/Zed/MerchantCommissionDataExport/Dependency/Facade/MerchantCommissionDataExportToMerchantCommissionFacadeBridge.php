@@ -24,11 +24,6 @@ class MerchantCommissionDataExportToMerchantCommissionFacadeBridge implements Me
         $this->merchantCommissionFacade = $merchantCommissionFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
-     *
-     * @return float
-     */
     public function transformMerchantCommissionAmountFromPersistence(
         MerchantCommissionAmountTransformerRequestTransfer $merchantCommissionAmountTransformerRequestTransfer
     ): float {
